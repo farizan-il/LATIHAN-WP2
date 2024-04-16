@@ -75,22 +75,32 @@
             <div class="col-md-12 centered-form">
                 <form action="<?= base_url('matakuliah/cetak'); ?>" method="post">
                     <h3 class="text-center mb-5 font-weight-bold">Input Data Mata Kuliah</h3>
+                    
+                    <!-- Menampilkan pesan kesalahan -->
+                    <?php 
+                        echo validation_errors(
+                            '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong>oops... </strong>',
+                            '</div>'
+                        ); 
+                    ?>
+                    
                     <div class="form-group mt-5 mb-4">
-                        <label for="kode">Kode MTK</label>
+                        <label for="kode">Kode Mata Kuliah</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-code"></i></span>
                             </div>
-                            <input type="text" class="form-control" id="kode" name="kode" placeholder="Masukan Kode" required>
+                            <input type="text" class="form-control" id="kode" name="kode" placeholder="Masukan Kode [min 3]" required>
                         </div>
                     </div>
                     <div class="form-group mb-4">
-                        <label for="nama">Nama MTK</label>
+                        <label for="nama">Nama Mata Kuliah</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-file-alt"></i></span>
                             </div>
-                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan Nama Matkul" required>
+                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan Nama Matkul [min 3]" required>
                         </div>
                     </div>
                     <div class="form-group">
